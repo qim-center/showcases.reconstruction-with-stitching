@@ -1,7 +1,7 @@
 <figure>
     <img src="assets/full_stitch.gif" width="800">
-    <figcaption style="font-style: italic;">
-        Final stitched reconstruction of the T-rex skull, obtained using the proposed CT padding and automatic stitching pipeline.
+    <figcaption>
+        <em>Final stitched reconstruction of the T-rex skull, obtained using the proposed CT padding and automatic stitching pipeline.</em>
     </figcaption>
 </figure>
 
@@ -13,8 +13,8 @@ This was the case for a skull of a junior T-rex called Casper. It was scanned at
 
 <figure>
     <img src="assets/layer_sketch.png" width="800">
-    <figcaption style="font-style: italic;">
-        Sketch of the scan layout. The overlap is a rough approximation for visualization purposes. 11 scans are distributed over the 4 layers.
+    <figcaption>
+        <em>Sketch of the scan layout. The overlap is a rough approximation for visualization purposes. 11 scans are distributed over the 4 layers.</em>
     </figcaption>
 </figure>
 
@@ -36,8 +36,8 @@ To mitigate this, we modify the projection data prior to reconstruction by artif
 
 <figure>
     <img src="assets/padding_difference_comparison.png" width="800">
-    <figcaption style="font-style: italic;">
-        Left: without padding (raw data), Middle: with padding (augmented data), Right: difference between the two. The difference highlights the artifacts clearly. The effect is thus that we remove the circular arc artifacts towards the area where the object is excluded, and the intensity gradients that surround the arcs are also removed.
+    <figcaption>
+        <em>Left: without padding (raw data), Middle: with padding (augmented data), Right: difference between the two. The difference highlights the artifacts clearly. The effect is thus that we remove the circular arc artifacts towards the area where the object is excluded, and the intensity gradients that surround the arcs are also removed.</em>
     </figcaption>
 </figure>
 
@@ -74,15 +74,15 @@ In the figures below, we compare manually stitched volumes based on proprietary 
 ### 3D rendering comparisons
 <figure>
     <img src="assets/3d_comparison1.png" width="800">
-    <figcaption style="font-style: italic;">
-        Left: Top manual stitching. Bottom: New automatic stitching.
+    <figcaption>
+        <em>Left: Top manual stitching. Bottom: New automatic stitching.</em>
     </figcaption>
 </figure>
 
 <figure>
     <img src="assets/3d_comparison2.png" width="800">
-    <figcaption style="font-style: italic;">
-        Left: Top manual stitching. Bottom: New automatic stitching.
+    <figcaption>
+        <em>Left: Top manual stitching. Bottom: New automatic stitching.</em>
     </figcaption>
 </figure>
 
@@ -91,29 +91,29 @@ The red highlighted parts show some of the stitching artifacts. Stitching artifa
 ### 2D slice comparisons
 <figure>
     <img src="assets/2d_comparison1.png" width="800">
-    <figcaption style="font-style: italic;">
-        Left: Previous manual stitching. Right: New automatic stitching. The manual result shows circular artifacts and inconsistent intensity transitions at stitching boundaries, while these effects are largely absent in the automatic stitch.
+    <figcaption>
+        <em>Left: Previous manual stitching. Right: New automatic stitching. The manual result shows circular artifacts and inconsistent intensity transitions at stitching boundaries, while these effects are largely absent in the automatic stitch.</em>
     </figcaption>
 </figure>
 
 <figure>
     <img src="assets/2d_comparison2.png" width="400">
-    <figcaption style="font-style: italic;">
-        Left: Previous manual stitching. Right: New automatic stitching. Another slice comparison.
+    <figcaption>
+        <em>Left: Previous manual stitching. Right: New automatic stitching. Another slice comparison.</em>
     </figcaption>
 </figure>
 
 <figure>
     <img src="assets/2d_comparison4.png" width="800">
-    <figcaption style="font-style: italic;">
-        Left: Previous manual stitching. Right: New automatic stitching. As seen, some part is missing on the left. This could perhaps be due to having to crop bad artifacts away.
+    <figcaption>
+        <em>Left: Previous manual stitching. Right: New automatic stitching. As seen, some part is missing on the left. This could perhaps be due to having to crop bad artifacts away.</em>
     </figcaption>
 </figure>
 
 <figure>
     <img src="assets/2d_comparison3.png" width="800">
-    <figcaption style="font-style: italic;">
-        Left: Previous manual stitching. Right: New automatic stitching. Another slice comparison.
+    <figcaption>
+        <em>Left: Previous manual stitching. Right: New automatic stitching. Another slice comparison.</em>
     </figcaption>
 </figure>
 
