@@ -4,11 +4,12 @@ from src.scan_index import list_scan_configs, get_xtekct_path
 from src.ct import read_and_process, reconstruct_with_padding, reconstruct
 from src.io import save_recon
 
-def reconstruct_scans(scans):
-    ds = cfg.dataset
+def reconstruct_scans(scans, dataset=None):
+    ds = dataset if dataset else cfg.dataset
 
     if ds.name not in ['full_res', 'raw']:
         raise ValueError
+    print(f'Using dataset {ds.name} for reconstruction.')
 
     for scan in scans:
         confs = list_scan_configs(scan)
@@ -19,16 +20,16 @@ def reconstruct_scans(scans):
         print(f"{scan}: reading and processing")
         ct_data = read_and_process(file_name=xtekct_path)
 
-        print(f"{scan}: reconstructing with padding")
-
         if ds.name == 'full_res':
+            print(f"{scan}: reconstructing with padding")
             recon = reconstruct_with_padding(data=ct_data, pad_factor=0.25).array
         elif ds.name == 'raw':
+            print(f"{scan}: reconstructing without padding")
             recon = reconstruct(data=ct_data).array
         else:
             raise ValueError
 
-        save_recon(recon, scan)
+        save_recon(recon, scan, dataset=ds)
         
         print(f"{scan}: done")
 
