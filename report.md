@@ -18,6 +18,8 @@ This was the case for a skull of a junior T-rex called Casper. It was scanned at
     </figcaption>
 </figure>
 
+<p></p>
+
 This acquisition setup introduces two primary challenges
 - **The region of interest problem**, due to incomplete coverage of the object during acquisition.
 - **Volumetric stitching**, where multiple reconstructed volumes must be aligned and combined
@@ -40,6 +42,8 @@ To mitigate this, we modify the projection data prior to reconstruction by artif
         <em>Left: without padding (raw data), Middle: with padding (augmented data), Right: difference between the two. The difference highlights the artifacts clearly. The effect is thus that we remove the circular arc artifacts towards the area where the object is excluded, and the intensity gradients that surround the arcs are also removed.</em>
     </figcaption>
 </figure>
+
+<p></p>
 
 This technique is then applied on all individual scans before moving on to the next step.
 
@@ -79,12 +83,16 @@ In the figures below, we compare manually stitched volumes based on proprietary 
     </figcaption>
 </figure>
 
+<p></p>
+
 <figure>
     <img src="assets/3d_comparison2.png" width="800">
     <figcaption>
         <em>Left: Top manual stitching. Bottom: New automatic stitching.</em>
     </figcaption>
 </figure>
+
+<p></p>
 
 The red highlighted parts show some of the stitching artifacts. Stitching artifacts in the manual result appear as visible seams and inconsistent texture transition between volumes. They make it clear where the manual stitching was done. These are not present in the automatic stitch.
 
@@ -96,12 +104,16 @@ The red highlighted parts show some of the stitching artifacts. Stitching artifa
     </figcaption>
 </figure>
 
+<p></p>
+
 <figure>
     <img src="assets/2d_comparison2.png" width="400">
     <figcaption>
-        <em>Left: Previous manual stitching. Right: New automatic stitching. Another slice comparison.</em>
+        <em>Left: Previous manual stitching. Right: New automatic stitching. Another comparison from a crop of a slice.</em>
     </figcaption>
 </figure>
+
+<p></p>
 
 <figure>
     <img src="assets/2d_comparison4.png" width="800">
@@ -110,12 +122,16 @@ The red highlighted parts show some of the stitching artifacts. Stitching artifa
     </figcaption>
 </figure>
 
+<p></p>
+
 <figure>
     <img src="assets/2d_comparison3.png" width="800">
     <figcaption>
         <em>Left: Previous manual stitching. Right: New automatic stitching. Another slice comparison.</em>
     </figcaption>
 </figure>
+
+<p></p>
 
 # Notebooks
 See also the `padding.ipynb` and `stitching.ipynb` notebooks to play around with the methods in practice. These are more technical.
