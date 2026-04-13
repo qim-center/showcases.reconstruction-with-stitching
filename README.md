@@ -2,6 +2,9 @@
 
 # Repository Overview
 
+**Author:** David Wang Johansen <br>
+**Email:** s214743@dtu.dk
+
 This repository implements an end-to-end CT reconstruction and 3D volume stitching pipeline. The gif shown above is the result of stitching 11 CT scans into one unified volume of a T-rex.
 
 For a non-technical report detailing the problems and solutions, with visualizations and comparisons, see **`report.md`**.
@@ -37,27 +40,34 @@ DATASET=<dataset> python -m scripts.reconstruct
 
 ## Stitching
 
-Stitching is executed recursively using defined steps between pairwise volumes:
+Stitching is organized hierarchically. Pairwise registrations are first computed between individual scans, then merged into progressively larger volumes until a single unified volume is obtained.
+
+Run an individual stitching step with:
 ```
 DATASET=<dataset> python -m scripts.stitch_pipeline <step>
 ```
-Available steps (some steps depend on previous steps, so execute in order):
+
+The hierarchical dependency of the steps is as follows:
 ```
-step_4_10
-step_4_23
-step_4
-step_3_10
-step_3_23
-step_3
-step_2
-step_43
-step_21
-step_4321
+step_4_10   step_4_23   step_3_10   step_3_23   step_2
+    │           │           │           │          │
+    └─────┬─────┘           └─────┬─────┘          │
+          │                       │                │
+       step_4                  step_3          step_21
+          │                       │                │
+          └──────────────┬────────┘                │
+                         │                         │
+                      step_43                      │
+                         │                         │
+                         └──────────────┬──────────┘
+                                        │
+                                    step_4321
 ```
+E.g., `step_4` depends on `step_4_10` and `step_4_23`, `step_43` depends on `step_4` and `step_3`, and so on.
 
 The final output of `step_4321` consists of the fully assembled specimen.
 
-The results can be visualized inside of `notebooks/`.
+The result of `step_4321` can be visualized slice-wise and interactively in `notebooks/viz_full_res_stitch.ipynb`.
 
 # Dependencies
 A conda environment is required to run the full pipeline due to the use of `cil` for CT reconstruction. If only doing stitching, the `pip` packages are sufficient.
