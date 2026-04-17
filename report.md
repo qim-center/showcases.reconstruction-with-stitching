@@ -3,7 +3,7 @@
 **Author:** David Wang Johansen <br>
 **Email:** s214743@dtu.dk <br>
 **Affiliation:** <a href="https://qim.dk">QIM</a>, DTU Compute<br>
-**Date:** April 13, 2026
+**Date:** April 17, 2026
 
 <figure>
     <img src="assets/full_stitch.gif" width="800">
@@ -75,6 +75,15 @@ To address this, we perform automatic stitching by registering volumes in pairs.
 The stitching process is performed hierarchically:
 - Individual scans are first combined into layers  
 - The layers are then aligned and merged into the final volume  
+
+<figure>
+    <img src="assets/stitch_hierarchy.svg" width="520">
+    <figcaption>
+        <em>Schematic of the hierarchical stitching process for the 11 scans across 4 layers. Here, L denotes layer and S denotes scan.</em>
+    </figcaption>
+</figure>
+
+<p></p>
 
 This approach ensures that each registration step operates on sufficiently overlapping data, improving robustness and stability.
 
